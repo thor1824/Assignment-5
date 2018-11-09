@@ -16,7 +16,6 @@ public class Die
 {
     int eyes;
     int[] rolls;
-    int eyeCount;
     
     public Die(int eyes)
     {
@@ -49,7 +48,7 @@ public class Die
     
     public int getEyeCount(int eyeNumber)
     {
-        eyeCount = 0;
+        int eyeCount = 0;
         for (int i = 0; i < rolls.length; i++) 
         {
             if (eyeNumber == rolls[i]) 
@@ -63,15 +62,7 @@ public class Die
     
     public double getEyeFrequency(int eyeNumber)
     {
-       eyeCount = 0;
-        for (int i = 0; i < rolls.length; i++) 
-        {
-            if (eyeNumber == rolls[i]) 
-            {
-                eyeCount++;
-            }
-            
-        }
+        int eyeCount = getEyeCount(eyeNumber);
         return eyeCount/rolls.length;
     }
     
